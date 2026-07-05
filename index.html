@@ -3,772 +3,525 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MailPulse — Агенція Email Маркетингу</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50:  '#f0f4ff',
-              100: '#e0eaff',
-              200: '#c7d7fd',
-              300: '#a5bbfb',
-              400: '#8196f8',
-              500: '#6171f3',
-              600: '#4f57e8',
-              700: '#4044ce',
-              800: '#3538a6',
-              900: '#303383',
-            },
-            accent: {
-              400: '#fb923c',
-              500: '#f97316',
-              600: '#ea6c0a',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
-          animation: {
-            'fade-up':   'fadeUp 0.6s ease forwards',
-            'fade-in':   'fadeIn 0.8s ease forwards',
-            'float':     'float 3s ease-in-out infinite',
-            'pulse-slow':'pulse 3s cubic-bezier(0.4,0,0.6,1) infinite',
-          },
-          keyframes: {
-            fadeUp:  { '0%': { opacity:'0', transform:'translateY(30px)' }, '100%': { opacity:'1', transform:'translateY(0)' } },
-            fadeIn:  { '0%': { opacity:'0' }, '100%': { opacity:'1' } },
-            float:   { '0%,100%': { transform:'translateY(0)' }, '50%': { transform:'translateY(-12px)' } },
-          }
-        }
-      }
-    }
-  </script>
+  <title>Kadrisa Hotel — Бутик-готель на Албанській Рив'єрі</title>
+  <meta name="description" content="Kadrisa Hotel — бутик-готель на березі Іонічного моря в Дхермі, Албанія. Номери з видом на море, приватний пляж, середземноморська кухня." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/tailwind.css" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body class="font-sans bg-white text-gray-900 antialiased overflow-x-hidden">
+<body class="font-sans bg-sand-50 text-brand-900 antialiased overflow-x-hidden">
+
+  <!-- ───────────── TOP BAR ───────────── -->
+  <div class="bg-brand-800 text-sand-100 text-xs lg:text-sm">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
+      <p class="hidden sm:block">Раннє бронювання: <span class="text-terracotta-400 font-semibold">-15%</span> до кінця місяця</p>
+      <div class="flex items-center gap-4 mx-auto sm:mx-0">
+        <a href="tel:+355691234567" class="flex items-center gap-1.5 hover:text-white transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.125 1.125 0 00-.852-1.09l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a11.25 11.25 0 01-5.223-5.223l1.293-.97a1.125 1.125 0 00.417-1.173L8.963 5.126a1.125 1.125 0 00-1.09-.852H6.5A2.25 2.25 0 004.25 6.5v.25z" /></svg>
+          +355 69 123 4567
+        </a>
+        <a href="mailto:info@kadrisahotel.com" class="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+          info@kadrisahotel.com
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- ───────────── NAVIGATION ───────────── -->
-  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <header id="navbar" class="fixed top-8 sm:top-9 inset-x-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <nav class="flex items-center justify-between h-18 py-4">
         <!-- Logo -->
-        <a href="#" class="flex items-center gap-2 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center shadow-lg group-hover:shadow-brand-300/50 transition-shadow">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <span class="text-xl font-800 font-extrabold tracking-tight">Mail<span class="text-brand-600">Pulse</span></span>
+        <a href="#" class="flex flex-col leading-none group">
+          <span class="font-serif text-2xl font-bold tracking-wide navlogo-main">KADRISA</span>
+          <span class="text-[0.65rem] tracking-[0.35em] navlogo-sub">HOTEL</span>
         </a>
 
         <!-- Desktop links -->
-        <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-          <li><a href="#services" class="hover:text-brand-600 transition-colors">Послуги</a></li>
-          <li><a href="#results"  class="hover:text-brand-600 transition-colors">Результати</a></li>
-          <li><a href="#process"  class="hover:text-brand-600 transition-colors">Процес</a></li>
-          <li><a href="#pricing"  class="hover:text-brand-600 transition-colors">Тарифи</a></li>
-          <li><a href="#faq"      class="hover:text-brand-600 transition-colors">FAQ</a></li>
-        </ul>
-
-        <!-- CTA -->
-        <div class="hidden md:flex items-center gap-3">
-          <a href="#contact" class="text-sm font-semibold text-gray-700 hover:text-brand-600 transition-colors">Увійти</a>
-          <a href="#contact" class="btn-primary text-sm">Безкоштовний аудит</a>
+        <div class="hidden lg:flex items-center gap-9 text-sm font-medium navlinks">
+          <a href="#about" class="hover:text-terracotta-500 transition-colors">Про готель</a>
+          <a href="#rooms" class="hover:text-terracotta-500 transition-colors">Номери</a>
+          <a href="#amenities" class="hover:text-terracotta-500 transition-colors">Зручності</a>
+          <a href="#gallery" class="hover:text-terracotta-500 transition-colors">Галерея</a>
+          <a href="#reviews" class="hover:text-terracotta-500 transition-colors">Відгуки</a>
+          <a href="#contact" class="hover:text-terracotta-500 transition-colors">Контакти</a>
         </div>
 
-        <!-- Hamburger -->
-        <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Меню">
-          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
+        <div class="hidden lg:block">
+          <a href="#booking" class="btn-primary">Забронювати</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="menu-btn" class="lg:hidden p-2 -mr-2 navlogo-main" aria-label="Меню">
+          <svg id="icon-open" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+          <svg id="icon-close" class="w-7 h-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
         </button>
       </nav>
 
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="md:hidden hidden pb-6 border-t border-gray-100 mt-1">
-        <ul class="flex flex-col gap-4 pt-4 text-sm font-medium text-gray-600">
-          <li><a href="#services" class="mobile-link">Послуги</a></li>
-          <li><a href="#results"  class="mobile-link">Результати</a></li>
-          <li><a href="#process"  class="mobile-link">Процес</a></li>
-          <li><a href="#pricing"  class="mobile-link">Тарифи</a></li>
-          <li><a href="#faq"      class="mobile-link">FAQ</a></li>
-        </ul>
-        <a href="#contact" class="btn-primary mt-5 block text-center text-sm">Безкоштовний аудит</a>
+      <div id="mobile-menu" class="hidden lg:hidden bg-white rounded-2xl shadow-xl mb-4 p-4 space-y-1 text-brand-900">
+        <a href="#about" class="mobile-link">Про готель</a>
+        <a href="#rooms" class="mobile-link">Номери</a>
+        <a href="#amenities" class="mobile-link">Зручності</a>
+        <a href="#gallery" class="mobile-link">Галерея</a>
+        <a href="#reviews" class="mobile-link">Відгуки</a>
+        <a href="#contact" class="mobile-link">Контакти</a>
+        <a href="#booking" class="btn-primary w-full mt-2">Забронювати</a>
       </div>
     </div>
   </header>
 
-  <main>
+  <!-- ───────────── HERO ───────────── -->
+  <section class="relative hero-bg min-h-[92vh] flex items-end">
+    <div class="absolute inset-0 hero-overlay"></div>
 
-    <!-- ───────────── HERO ───────────── -->
-    <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-to-br from-slate-950 via-brand-900 to-slate-900">
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 pb-28 pt-40 w-full text-white">
+      <span class="chip-light animate-fade-in">Албанська рив'єра · Дхермі</span>
+      <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold mt-5 max-w-3xl animate-fade-up">
+        Там, де гори зустрічають Іонічне море
+      </h1>
+      <p class="text-lg sm:text-xl text-sand-100/90 mt-6 max-w-xl animate-fade-up" style="animation-delay:.15s">
+        Kadrisa Hotel — камерний бутик-готель із приватним виходом до пляжу, терасою з видом на море та душевною середземноморською кухнею.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-9 animate-fade-up" style="animation-delay:.3s">
+        <a href="#booking" class="btn-primary-lg">Забронювати номер</a>
+        <a href="#rooms" class="btn-ghost-lg">Переглянути номери</a>
+      </div>
+    </div>
 
-      <!-- Decorative blobs -->
-      <div class="absolute top-1/4 -left-32 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent-500/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute top-10 right-1/4 w-48 h-48 bg-brand-400/10 rounded-full blur-2xl pointer-events-none"></div>
+    <a href="#booking" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white animate-float hidden sm:block" aria-label="Прокрутити вниз">
+      <svg class="w-6 h-10" fill="none" viewBox="0 0 24 40" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="22" height="38" rx="11" /><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none" /></svg>
+    </a>
+  </section>
 
-      <!-- Grid pattern overlay -->
-      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-60"></div>
+  <!-- ───────────── BOOKING WIDGET (overlaps hero) ───────────── -->
+  <section id="booking" class="relative z-10 -mt-14 sm:-mt-16 px-6 lg:px-8">
+    <form id="booking-form" class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl shadow-brand-900/20 p-6 sm:p-8 grid sm:grid-cols-[1fr_1fr_1fr_auto] gap-4 items-end">
+      <div>
+        <label class="booking-label">Заїзд</label>
+        <input type="date" required class="booking-input" />
+      </div>
+      <div>
+        <label class="booking-label">Виїзд</label>
+        <input type="date" required class="booking-input" />
+      </div>
+      <div>
+        <label class="booking-label">Гості</label>
+        <select class="booking-input">
+          <option>2 дорослих</option>
+          <option>1 дорослий</option>
+          <option>2 дорослих, 1 дитина</option>
+          <option>3–4 дорослих</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-primary-lg w-full sm:w-auto whitespace-nowrap">Перевірити наявність</button>
+    </form>
+  </section>
 
-      <div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-        <!-- Left -->
-        <div class="text-white space-y-8 animate-fade-up">
-          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-medium text-brand-200">
-            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse-slow"></span>
-            #1 Email-агенція в Україні
-          </div>
+  <!-- ───────────── STATS STRIP ───────────── -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal">
+        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700"><span data-count="24">0</span>+</p>
+        <p class="text-sm text-brand-500 mt-2 tracking-wide">Затишних номерів</p>
+      </div>
+      <div class="reveal" style="transition-delay:.05s">
+        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700"><span data-count="50">0</span> м</p>
+        <p class="text-sm text-brand-500 mt-2 tracking-wide">До пляжу</p>
+      </div>
+      <div class="reveal" style="transition-delay:.1s">
+        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700">4.8</p>
+        <p class="text-sm text-brand-500 mt-2 tracking-wide">Рейтинг гостей</p>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700">100%</p>
+        <p class="text-sm text-brand-500 mt-2 tracking-wide">Сніданок включено</p>
+      </div>
+    </div>
+  </section>
 
-          <h1 class="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.08] tracking-tight">
-            Email-маркетинг,<br/>
-            що <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-accent-400">приносить</span><br/>
-            реальні продажі
-          </h1>
+  <!-- ───────────── ABOUT ───────────── -->
+  <section id="about" class="max-w-7xl mx-auto px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal grid grid-cols-2 gap-4">
+      <div class="photo-block photo-tall rounded-3xl"></div>
+      <div class="flex flex-col gap-4">
+        <div class="photo-block rounded-3xl h-40 lg:h-48"></div>
+        <div class="photo-block-alt rounded-3xl h-40 lg:h-48"></div>
+      </div>
+    </div>
 
-          <p class="text-lg text-slate-300 max-w-lg leading-relaxed">
-            Ми будуємо email-стратегії для e-commerce, SaaS і B2B-бізнесів. Від автоматизації до персоналізованих кампаній — збільшуємо ROI на 300%+.
-          </p>
+    <div class="reveal">
+      <span class="chip">Про готель</span>
+      <h2 class="section-title mt-5">Ласкаво просимо<br />до Kadrisa Hotel</h2>
+      <p class="section-sub mt-6 max-w-none">
+        Наш готель розташований у мальовничому селищі Дхермі на Албанській рив'єрі — там, де оливкові гаї спускаються прямо до кришталево чистого Іонічного моря. 24 номери, кожен з власним характером, поєднують сучасний комфорт із теплотою середземноморського дому.
+      </p>
+      <ul class="mt-8 space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="check-icon">✓</span>
+          <span>Приватний вихід до пляжу за 2 хвилини пішки</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="check-icon">✓</span>
+          <span>Тераса та ресторан з панорамним видом на море</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="check-icon">✓</span>
+          <span>Домашня кухня з місцевих продуктів та оливкової олії власного виробництва</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="check-icon">✓</span>
+          <span>Камерна атмосфера — лише 24 номери, персональний сервіс</span>
+        </li>
+      </ul>
+      <a href="#rooms" class="btn-outline mt-9">Переглянути номери →</a>
+    </div>
+  </section>
 
-          <div class="flex flex-wrap gap-4">
-            <a href="#contact" class="btn-primary-lg group">
-              Отримати аудит безкоштовно
-              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </a>
-            <a href="#results" class="btn-ghost-lg">
-              Дивитись кейси
-            </a>
-          </div>
+  <!-- ───────────── ROOMS ───────────── -->
+  <section id="rooms" class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="chip">Номери та люкси</span>
+        <h2 class="section-title mt-5">Оберіть свій ідеальний номер</h2>
+        <p class="section-sub mt-4 mx-auto">Від затишних номерів Standard до просторих люксів з видом на море — кожен номер створений для відпочинку.</p>
+      </div>
 
-          <!-- Social proof strip -->
-          <div class="flex flex-wrap items-center gap-6 pt-2 border-t border-white/10">
-            <div class="text-center">
-              <div class="text-3xl font-extrabold text-white" data-count="350">0</div>
-              <div class="text-xs text-slate-400 mt-0.5">клієнтів</div>
-            </div>
-            <div class="w-px h-10 bg-white/15"></div>
-            <div class="text-center">
-              <div class="text-3xl font-extrabold text-white" data-count="12">0</div>
-              <div class="text-xs text-slate-400 mt-0.5">млн листів/міс</div>
-            </div>
-            <div class="w-px h-10 bg-white/15"></div>
-            <div class="text-center">
-              <div class="text-3xl font-extrabold text-white"><span data-count="98">0</span>%</div>
-              <div class="text-xs text-slate-400 mt-0.5">задоволені клієнти</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-16">
+        <div class="room-card reveal">
+          <div class="photo-block h-52 rounded-t-2xl"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold">Standard Sea View</h3>
+            <p class="text-sm text-brand-500 mt-1">22 м² · до 2 гостей</p>
+            <p class="text-sm text-brand-600/80 mt-3">Класичний номер з балконом та видом на море.</p>
+            <div class="flex items-center justify-between mt-5">
+              <span class="font-serif text-lg font-bold text-terracotta-600">від €80<span class="text-xs font-sans font-normal text-brand-400">/ніч</span></span>
+              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Забронювати →</a>
             </div>
           </div>
         </div>
 
-        <!-- Right — floating email mockup -->
-        <div class="hidden lg:flex justify-center items-center relative animate-float">
-          <div class="relative w-full max-w-md">
-            <!-- Main card -->
-            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
-              <div class="bg-gradient-to-r from-brand-600 to-brand-500 px-6 py-4 flex items-center gap-3">
-                <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                  <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                </div>
-                <div class="flex-1 bg-white/20 rounded-md h-5 text-white/70 text-xs flex items-center px-3">mailpulse.agency</div>
-              </div>
-              <div class="p-6 space-y-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm">MP</div>
-                  <div>
-                    <div class="text-sm font-semibold text-gray-800">MailPulse Agency</div>
-                    <div class="text-xs text-gray-400">hello@mailpulse.agency</div>
-                  </div>
-                  <div class="ml-auto text-xs text-gray-400">10:24</div>
-                </div>
-                <h3 class="font-bold text-gray-900">🚀 Ваш ROI зріс на 247%!</h3>
-                <p class="text-sm text-gray-500 leading-relaxed">Щомісячний звіт по вашій email-кампанії готовий. Відкриваємість: <strong class="text-brand-600">42.3%</strong>, конверсія: <strong class="text-green-600">8.7%</strong>...</p>
-                <div class="grid grid-cols-3 gap-3">
-                  <div class="bg-brand-50 rounded-xl p-3 text-center">
-                    <div class="text-lg font-extrabold text-brand-600">42%</div>
-                    <div class="text-xs text-gray-500 mt-0.5">Open Rate</div>
-                  </div>
-                  <div class="bg-green-50 rounded-xl p-3 text-center">
-                    <div class="text-lg font-extrabold text-green-600">8.7%</div>
-                    <div class="text-xs text-gray-500 mt-0.5">CTR</div>
-                  </div>
-                  <div class="bg-accent-50 rounded-xl p-3 text-center">
-                    <div class="text-lg font-extrabold text-accent-600">×3.2</div>
-                    <div class="text-xs text-gray-500 mt-0.5">ROI</div>
-                  </div>
-                </div>
-                <button class="w-full bg-gradient-to-r from-brand-500 to-brand-600 text-white rounded-xl py-3 text-sm font-semibold hover:shadow-lg transition-shadow">Переглянути звіт →</button>
-              </div>
+        <div class="room-card reveal" style="transition-delay:.05s">
+          <div class="photo-block-alt h-52 rounded-t-2xl"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold">Deluxe Balcony</h3>
+            <p class="text-sm text-brand-500 mt-1">28 м² · до 3 гостей</p>
+            <p class="text-sm text-brand-600/80 mt-3">Просторий номер з великим балконом над морем.</p>
+            <div class="flex items-center justify-between mt-5">
+              <span class="font-serif text-lg font-bold text-terracotta-600">від €105<span class="text-xs font-sans font-normal text-brand-400">/ніч</span></span>
+              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Забронювати →</a>
             </div>
+          </div>
+        </div>
 
-            <!-- Floating badges -->
-            <div class="absolute -top-4 -right-4 bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              Доставлено
+        <div class="room-card reveal" style="transition-delay:.1s">
+          <div class="photo-block h-52 rounded-t-2xl"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold">Family Suite</h3>
+            <p class="text-sm text-brand-500 mt-1">40 м² · до 4 гостей</p>
+            <p class="text-sm text-brand-600/80 mt-3">Двокімнатний люкс, ідеальний для родин.</p>
+            <div class="flex items-center justify-between mt-5">
+              <span class="font-serif text-lg font-bold text-terracotta-600">від €150<span class="text-xs font-sans font-normal text-brand-400">/ніч</span></span>
+              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Забронювати →</a>
             </div>
-            <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl px-4 py-2.5 flex items-center gap-2.5">
-              <div class="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
-                <svg class="w-4 h-4 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-              </div>
-              <div>
-                <div class="text-xs text-gray-500">Дохід за місяць</div>
-                <div class="text-sm font-bold text-gray-900">+₴124,800</div>
-              </div>
+          </div>
+        </div>
+
+        <div class="room-card reveal" style="transition-delay:.15s">
+          <div class="photo-block-alt h-52 rounded-t-2xl"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold">Honeymoon Suite</h3>
+            <p class="text-sm text-brand-500 mt-1">35 м² · до 2 гостей</p>
+            <p class="text-sm text-brand-600/80 mt-3">Приватна тераса з джакузі та видом на захід сонця.</p>
+            <div class="flex items-center justify-between mt-5">
+              <span class="font-serif text-lg font-bold text-terracotta-600">від €180<span class="text-xs font-sans font-normal text-brand-400">/ніч</span></span>
+              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Забронювати →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── AMENITIES ───────────── -->
+  <section id="amenities" class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="chip">Зручності</span>
+      <h2 class="section-title mt-5">Усе для безтурботного відпочинку</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+      <div class="amenity-card reveal">
+        <div class="amenity-icon">🏖️</div>
+        <h3 class="font-semibold mt-4">Приватний пляж</h3>
+        <p class="text-sm text-brand-500 mt-1">Власний доступ до узбережжя</p>
+      </div>
+      <div class="amenity-card reveal" style="transition-delay:.04s">
+        <div class="amenity-icon">🍽️</div>
+        <h3 class="font-semibold mt-4">Ресторан і бар</h3>
+        <p class="text-sm text-brand-500 mt-1">Середземноморська кухня</p>
+      </div>
+      <div class="amenity-card reveal" style="transition-delay:.08s">
+        <div class="amenity-icon">💆</div>
+        <h3 class="font-semibold mt-4">Спа та масаж</h3>
+        <p class="text-sm text-brand-500 mt-1">Процедури для релаксу</p>
+      </div>
+      <div class="amenity-card reveal" style="transition-delay:.12s">
+        <div class="amenity-icon">📶</div>
+        <h3 class="font-semibold mt-4">Безкоштовний Wi-Fi</h3>
+        <p class="text-sm text-brand-500 mt-1">У всіх номерах та зонах</p>
+      </div>
+      <div class="amenity-card reveal">
+        <div class="amenity-icon">🚗</div>
+        <h3 class="font-semibold mt-4">Трансфер</h3>
+        <p class="text-sm text-brand-500 mt-1">З/до аеропорту за запитом</p>
+      </div>
+      <div class="amenity-card reveal" style="transition-delay:.04s">
+        <div class="amenity-icon">🅿️</div>
+        <h3 class="font-semibold mt-4">Парковка</h3>
+        <p class="text-sm text-brand-500 mt-1">Безкоштовна, охороняється</p>
+      </div>
+      <div class="amenity-card reveal" style="transition-delay:.08s">
+        <div class="amenity-icon">🕐</div>
+        <h3 class="font-semibold mt-4">Рецепція 24/7</h3>
+        <p class="text-sm text-brand-500 mt-1">Завжди на зв'язку для гостей</p>
+      </div>
+      <div class="amenity-card reveal" style="transition-delay:.12s">
+        <div class="amenity-icon">🐾</div>
+        <h3 class="font-semibold mt-4">Можна з тваринами</h3>
+        <p class="text-sm text-brand-500 mt-1">За попереднім погодженням</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── GALLERY ───────────── -->
+  <section id="gallery" class="bg-brand-900 py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="chip-light">Галерея</span>
+        <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white mt-5">Атмосфера Kadrisa Hotel</h2>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14">
+        <div class="gallery-item photo-block rounded-2xl h-52 lg:h-64 lg:col-span-2 lg:row-span-2 lg:h-full reveal"></div>
+        <div class="gallery-item photo-block-alt rounded-2xl h-52 lg:h-64 reveal" style="transition-delay:.05s"></div>
+        <div class="gallery-item photo-block rounded-2xl h-52 lg:h-64 reveal" style="transition-delay:.1s"></div>
+        <div class="gallery-item photo-block-alt rounded-2xl h-52 lg:h-64 reveal" style="transition-delay:.15s"></div>
+        <div class="gallery-item photo-block rounded-2xl h-52 lg:h-64 reveal" style="transition-delay:.2s"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── TESTIMONIALS ───────────── -->
+  <section id="reviews" class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="chip">Відгуки гостей</span>
+      <h2 class="section-title mt-5">Що кажуть наші гості</h2>
+    </div>
+
+    <div class="relative mt-16 max-w-3xl mx-auto reveal">
+      <div id="testimonial-track" class="overflow-hidden">
+        <div id="testimonial-slides" class="flex transition-transform duration-500 ease-in-out">
+          <div class="testimonial-slide">
+            <div class="testimonial-card text-center">
+              <div class="text-terracotta-500 text-lg mb-3">★★★★★</div>
+              <p class="text-lg text-brand-700 italic">«Найкращий вид на море, який ми бачили в Албанії. Персонал зустрічав нас як рідних, а сніданки на терасі — окрема пригода.»</p>
+              <p class="font-semibold mt-5">Олена К.</p>
+              <p class="text-sm text-brand-400">Україна</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card text-center">
+              <div class="text-terracotta-500 text-lg mb-3">★★★★★</div>
+              <p class="text-lg text-brand-700 italic">«Камерний готель із великою душею. Приватний пляж за 2 хвилини, а вечори на терасі під заходом сонця запам'ятаються надовго.»</p>
+              <p class="font-semibold mt-5">Marco R.</p>
+              <p class="text-sm text-brand-400">Італія</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card text-center">
+              <div class="text-terracotta-500 text-lg mb-3">★★★★★</div>
+              <p class="text-lg text-brand-700 italic">«Ідеальне місце для медового місяця. Номер із джакузі та видом на море перевершив усі очікування.»</p>
+              <p class="font-semibold mt-5">Anna & Tobias</p>
+              <p class="text-sm text-brand-400">Німеччина</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs">
-        <span>Гортати вниз</span>
-        <div class="w-5 h-8 border-2 border-white/30 rounded-full flex items-start justify-center pt-1">
-          <div class="w-1 h-2 bg-white/60 rounded-full animate-bounce"></div>
-        </div>
+      <button id="t-prev" class="t-nav-btn left-0 -translate-x-1/2" aria-label="Попередній відгук">‹</button>
+      <button id="t-next" class="t-nav-btn right-0 translate-x-1/2" aria-label="Наступний відгук">›</button>
+
+      <div id="testimonial-dots" class="flex justify-center gap-2 mt-8"></div>
+    </div>
+  </section>
+
+  <!-- ───────────── CTA BANNER ───────────── -->
+  <section class="relative overflow-hidden">
+    <div class="cta-bg py-16 px-6 lg:px-8 text-center relative">
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white reveal">Раннє бронювання — знижка 15%</h2>
+      <p class="text-sand-100/90 mt-3 max-w-lg mx-auto reveal">Забронюйте відпочинок на Албанській рив'єрі вже зараз і заощадьте на своїй подорожі мрії.</p>
+      <a href="#booking" class="btn-white mt-8 inline-flex reveal">Забронювати зі знижкою</a>
+    </div>
+  </section>
+
+  <!-- ───────────── FAQ ───────────── -->
+  <section class="max-w-3xl mx-auto px-6 lg:px-8 py-24">
+    <div class="text-center reveal">
+      <span class="chip">Питання й відповіді</span>
+      <h2 class="section-title mt-5">Часті запитання</h2>
+    </div>
+
+    <div class="mt-10 space-y-4">
+      <div class="faq-item reveal">
+        <button class="faq-btn">
+          <span>О котрій годині заїзд і виїзд?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-body"><p class="text-brand-600/80">Заїзд з 14:00, виїзд до 11:00. За можливості ранній заїзд/пізній виїзд узгоджуємо безкоштовно.</p></div>
       </div>
-    </section>
-
-    <!-- ───────────── LOGOS ───────────── -->
-    <section class="py-14 border-y border-gray-100 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <p class="text-center text-sm text-gray-400 font-medium mb-8 uppercase tracking-widest">Нам довіряють</p>
-        <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-50 grayscale">
-          <!-- Stylized text logos -->
-          <span class="text-2xl font-extrabold text-gray-700 tracking-tight">Rozetka</span>
-          <span class="text-2xl font-extrabold text-gray-700 tracking-tight">Nova</span>
-          <span class="text-2xl font-extrabold text-gray-700 tracking-tight">Monobank</span>
-          <span class="text-2xl font-extrabold text-gray-700 tracking-tight">ДТЕК</span>
-          <span class="text-2xl font-extrabold text-gray-700 tracking-tight">Foxtrot</span>
-          <span class="text-2xl font-extrabold text-gray-700 tracking-tight">OLX</span>
-        </div>
+      <div class="faq-item reveal">
+        <button class="faq-btn">
+          <span>Чи є трансфер з аеропорту?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-body"><p class="text-brand-600/80">Так, організовуємо трансфер з аеропортів Тирани та Корфу (поромом) за попереднім запитом.</p></div>
       </div>
-    </section>
-
-    <!-- ───────────── SERVICES ───────────── -->
-    <section id="services" class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <span class="chip">Наші послуги</span>
-          <h2 class="section-title mt-4">Повний цикл email-маркетингу</h2>
-          <p class="section-sub mt-4">Від стратегії до аналітики — ми покриваємо кожен аспект вашого email-каналу</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div class="service-card group reveal">
-            <div class="service-icon bg-brand-50 text-brand-600 group-hover:bg-brand-600 group-hover:text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-4">Email-стратегія</h3>
-            <p class="text-sm text-gray-500 mt-2 leading-relaxed">Розробляємо комплексну стратегію під ваш бізнес: сегментація, контент-план, воронки продажів.</p>
-            <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Аудит поточних розсилок</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Стратегічна карта на 6 місяців</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>KPI та метрики успіху</li>
-            </ul>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="service-card group reveal">
-            <div class="service-icon bg-accent-50 text-accent-500 group-hover:bg-accent-500 group-hover:text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-4">Автоматизація</h3>
-            <p class="text-sm text-gray-500 mt-2 leading-relaxed">Налаштовуємо тригерні ланцюжки, welcome-серії та abandoned cart — ваш email працює 24/7.</p>
-            <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Welcome-серії</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Abandoned Cart Recovery</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Post-purchase flows</li>
-            </ul>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="service-card group reveal">
-            <div class="service-icon bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-4">Дизайн шаблонів</h3>
-            <p class="text-sm text-gray-500 mt-2 leading-relaxed">Унікальні HTML-шаблони, що відповідають вашому бренду та коректно відображаються у всіх клієнтах.</p>
-            <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Адаптивна верстка</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Dark mode підтримка</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>A/B тестування</li>
-            </ul>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="service-card group reveal">
-            <div class="service-icon bg-green-50 text-green-600 group-hover:bg-green-600 group-hover:text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-4">Сегментація бази</h3>
-            <p class="text-sm text-gray-500 mt-2 leading-relaxed">Розподіляємо підписників на сегменти для максимально персоналізованої комунікації.</p>
-            <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>RFM-аналіз</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Поведінкова сегментація</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Динамічний контент</li>
-            </ul>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="service-card group reveal">
-            <div class="service-icon bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-4">Аналітика і звіти</h3>
-            <p class="text-sm text-gray-500 mt-2 leading-relaxed">Детальні звіти по кожній кампанії з рекомендаціями щодо покращення результатів.</p>
-            <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-rose-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Щомісячні дашборди</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-rose-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Revenue attribution</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-rose-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Competitor benchmarks</li>
-            </ul>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="service-card group reveal">
-            <div class="service-icon bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mt-4">Deliverability</h3>
-            <p class="text-sm text-gray-500 mt-2 leading-relaxed">Забезпечуємо потрапляння листів в inbox, а не spam. Технічне налаштування та репутація домену.</p>
-            <ul class="mt-4 space-y-1.5 text-sm text-gray-600">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sky-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>SPF, DKIM, DMARC</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sky-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>IP Warming</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-sky-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Spam score моніторинг</li>
-            </ul>
-          </div>
-        </div>
+      <div class="faq-item reveal">
+        <button class="faq-btn">
+          <span>Яка політика скасування бронювання?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-body"><p class="text-brand-600/80">Безкоштовне скасування за 7 днів до заїзду. Пізніше стягується вартість першої ночі.</p></div>
       </div>
-    </section>
-
-    <!-- ───────────── RESULTS ───────────── -->
-    <section id="results" class="py-24 bg-gradient-to-br from-slate-950 via-brand-900 to-slate-900 text-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <span class="chip-light">Результати</span>
-          <h2 class="text-4xl lg:text-5xl font-extrabold mt-4 tracking-tight">Цифри говорять самі</h2>
-          <p class="text-slate-300 mt-4">Середні показники наших клієнтів після 3 місяців роботи</p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="stat-card reveal">
-            <div class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-400">+312%</div>
-            <div class="text-white font-semibold mt-2">Зростання ROI</div>
-            <div class="text-slate-400 text-sm mt-1">email-каналу</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-accent-400">42%</div>
-            <div class="text-white font-semibold mt-2">Середній Open Rate</div>
-            <div class="text-slate-400 text-sm mt-1">проти 18% по ринку</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-400">8.7%</div>
-            <div class="text-white font-semibold mt-2">Click-Through Rate</div>
-            <div class="text-slate-400 text-sm mt-1">проти 2.6% по ринку</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-400">98%</div>
-            <div class="text-white font-semibold mt-2">Inbox Delivery Rate</div>
-            <div class="text-slate-400 text-sm mt-1">гарантований результат</div>
-          </div>
-        </div>
-
-        <!-- Case studies -->
-        <div class="grid md:grid-cols-3 gap-6 mt-12">
-          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 reveal">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-semibold uppercase tracking-widest text-brand-300">E-commerce</span>
-              <span class="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">+287% дохід</span>
-            </div>
-            <h4 class="font-bold text-white">Fashion-ритейлер</h4>
-            <p class="text-sm text-slate-400 mt-2 leading-relaxed">Побудували систему автоматизації з 12 тригерних ланцюжків. За 4 місяці email-канал виріс з 5% до 23% загального доходу.</p>
-          </div>
-          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 reveal">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-semibold uppercase tracking-widest text-accent-300">SaaS</span>
-              <span class="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">-34% churn</span>
-            </div>
-            <h4 class="font-bold text-white">B2B SaaS платформа</h4>
-            <p class="text-sm text-slate-400 mt-2 leading-relaxed">Onboarding-серія та retention emails знизили відтік клієнтів на 34% і збільшили upsell на $45K/місяць.</p>
-          </div>
-          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 reveal">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-semibold uppercase tracking-widest text-purple-300">EdTech</span>
-              <span class="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">×4 конверсія</span>
-            </div>
-            <h4 class="font-bold text-white">Онлайн-школа</h4>
-            <p class="text-sm text-slate-400 mt-2 leading-relaxed">Сегментація бази та персоналізовані воронки збільшили конверсію в продаж курсів у 4 рази за 2 місяці.</p>
-          </div>
-        </div>
+      <div class="faq-item reveal">
+        <button class="faq-btn">
+          <span>Чи можна проживати з тваринами?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-body"><p class="text-brand-600/80">Так, невеликі домашні тварини допускаються за попереднім погодженням з адміністрацією.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ───────────── PROCESS ───────────── -->
-    <section id="process" class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <span class="chip">Як ми працюємо</span>
-          <h2 class="section-title mt-4">Простий процес — великі результати</h2>
-          <p class="section-sub mt-4">Ми не ускладнюємо. Чіткий план і прозора комунікація на кожному кроці.</p>
-        </div>
+  <!-- ───────────── LOCATION + CONTACT ───────────── -->
+  <section id="contact" class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-14">
+      <div class="reveal">
+        <span class="chip">Контакти</span>
+        <h2 class="section-title mt-5">Плануйте свою подорож</h2>
+        <p class="section-sub mt-4 mx-auto lg:mx-0">Маєте запитання щодо номерів чи бронювання? Напишіть нам — відповідаємо протягом кількох годин.</p>
 
-        <div class="relative">
-          <!-- Connecting line (desktop) -->
-          <div class="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-brand-200 via-brand-400 to-brand-200"></div>
-
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="process-step reveal">
-              <div class="step-circle">1</div>
-              <h3 class="font-bold text-gray-900 mt-4">Аудит і аналіз</h3>
-              <p class="text-sm text-gray-500 mt-2 leading-relaxed">Аналізуємо поточний стан, базу підписників і конкурентів. Знаходимо точки зростання.</p>
-            </div>
-            <div class="process-step reveal">
-              <div class="step-circle">2</div>
-              <h3 class="font-bold text-gray-900 mt-4">Стратегія</h3>
-              <p class="text-sm text-gray-500 mt-2 leading-relaxed">Розробляємо детальну roadmap з прогнозованими KPI та планом контенту на 3 місяці.</p>
-            </div>
-            <div class="process-step reveal">
-              <div class="step-circle">3</div>
-              <h3 class="font-bold text-gray-900 mt-4">Запуск</h3>
-              <p class="text-sm text-gray-500 mt-2 leading-relaxed">Налаштовуємо технічну частину, верстаємо шаблони і запускаємо перші кампанії.</p>
-            </div>
-            <div class="process-step reveal">
-              <div class="step-circle">4</div>
-              <h3 class="font-bold text-gray-900 mt-4">Оптимізація</h3>
-              <p class="text-sm text-gray-500 mt-2 leading-relaxed">Щотижневий аналіз результатів, A/B тести і постійне покращення показників.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────── TESTIMONIALS ───────────── -->
-    <section class="py-24 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <span class="chip">Відгуки</span>
-          <h2 class="section-title mt-4">Що кажуть наші клієнти</h2>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="testimonial-card reveal">
-            <div class="flex gap-1 mb-4">
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed italic">"MailPulse повністю змінили наш підхід до email. За 3 місяці виручка з цього каналу зросла на 180%. Команда дуже проактивна і завжди в контексті нашого бізнесу."</p>
-            <div class="flex items-center gap-3 mt-5 pt-5 border-t border-gray-100">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center text-white font-bold text-sm">АК</div>
-              <div>
-                <div class="font-semibold text-sm text-gray-900">Андрій Коваленко</div>
-                <div class="text-xs text-gray-400">CEO, StyleHub</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card reveal">
-            <div class="flex gap-1 mb-4">
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed italic">"Найкраща інвестиція в маркетинг за останні 2 роки. Команда MailPulse глибоко розбирається в SaaS-метриках і знає, як email впливає на LTV."</p>
-            <div class="flex items-center gap-3 mt-5 pt-5 border-t border-gray-100">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center text-white font-bold text-sm">МС</div>
-              <div>
-                <div class="font-semibold text-sm text-gray-900">Марія Савченко</div>
-                <div class="text-xs text-gray-400">CMO, TechFlow SaaS</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card reveal">
-            <div class="flex gap-1 mb-4">
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed italic">"Прозора звітність і реальні результати. Через 2 місяці наш Open Rate виріс з 14% до 38%. Рекомендую всім, хто серйозно ставиться до email-маркетингу."</p>
-            <div class="flex items-center gap-3 mt-5 pt-5 border-t border-gray-100">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-sm">ОМ</div>
-              <div>
-                <div class="font-semibold text-sm text-gray-900">Олена Мороз</div>
-                <div class="text-xs text-gray-400">Founder, LearnUp Academy</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────── PRICING ───────────── -->
-    <section id="pricing" class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <span class="chip">Тарифи</span>
-          <h2 class="section-title mt-4">Прозорі ціни, без сюрпризів</h2>
-          <p class="section-sub mt-4">Обирайте план відповідно до розміру вашого бізнесу</p>
-
-          <!-- Toggle -->
-          <div class="flex items-center justify-center gap-4 mt-6">
-            <span id="toggle-monthly" class="text-sm font-semibold text-gray-900 cursor-pointer">Щомісячно</span>
-            <button id="billing-toggle" class="relative w-12 h-6 bg-brand-500 rounded-full transition-colors" aria-label="Перемкнути біллінг">
-              <span id="toggle-knob" class="absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform"></span>
-            </button>
-            <span id="toggle-annual" class="text-sm font-medium text-gray-500 cursor-pointer">
-              Щорічно <span class="text-green-600 font-semibold">-20%</span>
-            </span>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Starter -->
-          <div class="pricing-card reveal">
-            <div class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Starter</div>
-            <div class="flex items-end gap-1 mb-1">
-              <span class="text-4xl font-extrabold text-gray-900 price-val" data-monthly="790" data-annual="632">790</span>
-              <span class="text-gray-400 mb-1.5 price-currency">₴/міс</span>
-            </div>
-            <p class="text-sm text-gray-400 mb-6">Ідеально для малого бізнесу з базою до 5 000 підписників</p>
-            <ul class="space-y-3 mb-8">
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>До 5 000 підписників</li>
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>4 кампанії на місяць</li>
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Welcome-серія</li>
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>1 шаблон листа</li>
-              <li class="price-feature text-gray-300"><svg class="w-4 h-4 text-gray-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>A/B тестування</li>
-              <li class="price-feature text-gray-300"><svg class="w-4 h-4 text-gray-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>Dedicated менеджер</li>
-            </ul>
-            <a href="#contact" class="btn-outline w-full block text-center">Почати</a>
-          </div>
-
-          <!-- Growth (featured) -->
-          <div class="pricing-card pricing-card--featured reveal">
-            <div class="flex items-center justify-between mb-4">
-              <div class="text-xs font-semibold uppercase tracking-widest text-brand-200">Growth</div>
-              <span class="bg-accent-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Популярний</span>
-            </div>
-            <div class="flex items-end gap-1 mb-1">
-              <span class="text-4xl font-extrabold text-white price-val" data-monthly="2490" data-annual="1992">2 490</span>
-              <span class="text-brand-200 mb-1.5 price-currency">₴/міс</span>
-            </div>
-            <p class="text-sm text-brand-200 mb-6">Для бізнесів, що активно ростуть, з базою до 25 000</p>
-            <ul class="space-y-3 mb-8">
-              <li class="price-feature-light"><svg class="w-4 h-4 text-brand-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>До 25 000 підписників</li>
-              <li class="price-feature-light"><svg class="w-4 h-4 text-brand-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Необмежені кампанії</li>
-              <li class="price-feature-light"><svg class="w-4 h-4 text-brand-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Повна автоматизація</li>
-              <li class="price-feature-light"><svg class="w-4 h-4 text-brand-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>5 шаблонів листів</li>
-              <li class="price-feature-light"><svg class="w-4 h-4 text-brand-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>A/B тестування</li>
-              <li class="price-feature-light text-brand-300/50"><svg class="w-4 h-4 text-white/20 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>Dedicated менеджер</li>
-            </ul>
-            <a href="#contact" class="btn-white w-full block text-center">Почати</a>
-          </div>
-
-          <!-- Enterprise -->
-          <div class="pricing-card reveal">
-            <div class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Enterprise</div>
-            <div class="flex items-end gap-1 mb-1">
-              <span class="text-4xl font-extrabold text-gray-900 price-val" data-monthly="6990" data-annual="5592">6 990</span>
-              <span class="text-gray-400 mb-1.5 price-currency">₴/міс</span>
-            </div>
-            <p class="text-sm text-gray-400 mb-6">Для великих компаній з базою 25 000+ та кастомними потребами</p>
-            <ul class="space-y-3 mb-8">
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Необмежені підписники</li>
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Необмежені кампанії</li>
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Повна автоматизація + AI</li>
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Безліміт шаблонів</li>
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>A/B + мультиваріатні тести</li>
-              <li class="price-feature"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Dedicated менеджер</li>
-            </ul>
-            <a href="#contact" class="btn-outline w-full block text-center">Зв'язатись</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────── FAQ ───────────── -->
-    <section id="faq" class="py-24 bg-gray-50">
-      <div class="max-w-3xl mx-auto px-6 lg:px-8">
-        <div class="text-center mb-16 reveal">
-          <span class="chip">FAQ</span>
-          <h2 class="section-title mt-4">Часті запитання</h2>
-        </div>
-
-        <div class="space-y-3" id="faq-list">
-          <div class="faq-item reveal">
-            <button class="faq-btn">
-              <span>Скільки часу потрібно для отримання перших результатів?</span>
-              <svg class="faq-icon w-5 h-5 text-gray-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="text-gray-600 text-sm leading-relaxed">Перші помітні результати з'являються вже через 2-4 тижні після запуску перших кампаній. Суттєве зростання ROI ми спостерігаємо після 2-3 місяців роботи, коли накопичуються дані для оптимізації.</p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-btn">
-              <span>Які платформи email-розсилок ви використовуєте?</span>
-              <svg class="faq-icon w-5 h-5 text-gray-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="text-gray-600 text-sm leading-relaxed">Ми працюємо з усіма провідними платформами: Klaviyo, Mailchimp, Sendgrid, Brevo, HubSpot, Salesforce Marketing Cloud та іншими. Допомагаємо обрати оптимальну платформу під ваш бізнес або працюємо на вже існуючій.</p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-btn">
-              <span>Чи потрібна наявна база підписників для старту?</span>
-              <svg class="faq-icon w-5 h-5 text-gray-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="text-gray-600 text-sm leading-relaxed">Ні, але наявна база значно пришвидшує результати. Якщо бази немає — ми допоможемо налаштувати форми збору і стратегію нарощування аудиторії. З базою від 1 000 контактів вже можна бачити перші результати.</p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-btn">
-              <span>Як ви вимірюєте ROI від email-маркетингу?</span>
-              <svg class="faq-icon w-5 h-5 text-gray-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="text-gray-600 text-sm leading-relaxed">Ми відстежуємо прямий дохід через UTM-мітки і пікселі конверсій, а також атрибуційні моделі. Щомісячний звіт містить: дохід від email, CAC, LTV, Open Rate, CTR, CTOR і порівняння з попередніми місяцями.</p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-btn">
-              <span>Чи можна скасувати підписку в будь-який момент?</span>
-              <svg class="faq-icon w-5 h-5 text-gray-400 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="text-gray-600 text-sm leading-relaxed">Так. Ми не прив'язуємо до довгострокових контрактів. Можна скасувати з повідомленням за 30 днів. Всі ваші дані, шаблони і матеріали залишаються у вас.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────── CONTACT ───────────── -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-slate-950 via-brand-900 to-slate-900">
-      <div class="max-w-4xl mx-auto px-6 lg:px-8">
-        <div class="text-center mb-12 reveal">
-          <span class="chip-light">Контакт</span>
-          <h2 class="text-4xl lg:text-5xl font-extrabold text-white mt-4 tracking-tight">Готові рости?</h2>
-          <p class="text-slate-300 mt-4 max-w-xl mx-auto">Залиште заявку і ми проведемо безкоштовний 30-хвилинний аудит вашого email-каналу</p>
-        </div>
-
-        <form id="contact-form" class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-10 reveal">
-          <div class="grid sm:grid-cols-2 gap-6">
+        <div class="space-y-5 mt-9">
+          <div class="flex items-start gap-4">
+            <span class="contact-icon">📍</span>
             <div>
-              <label class="form-label">Ваше ім'я</label>
-              <input type="text" name="name" placeholder="Іван Іваненко" class="form-input" required />
-            </div>
-            <div>
-              <label class="form-label">Email</label>
-              <input type="email" name="email" placeholder="ivan@company.ua" class="form-input" required />
-            </div>
-            <div>
-              <label class="form-label">Компанія / Сайт</label>
-              <input type="text" name="company" placeholder="company.ua" class="form-input" />
-            </div>
-            <div>
-              <label class="form-label">Розмір бази</label>
-              <select name="list_size" class="form-input">
-                <option value="">Оберіть…</option>
-                <option>До 1 000</option>
-                <option>1 000 — 5 000</option>
-                <option>5 000 — 25 000</option>
-                <option>25 000+</option>
-              </select>
-            </div>
-            <div class="sm:col-span-2">
-              <label class="form-label">Розкажіть про ваш бізнес</label>
-              <textarea name="message" rows="4" placeholder="Чим займається компанія, які цілі ставите перед email-маркетингом…" class="form-input resize-none"></textarea>
+              <p class="font-semibold">Адреса</p>
+              <p class="text-brand-500 text-sm">Пляж Дхермі, Химара, Албанія</p>
             </div>
           </div>
-          <button type="submit" class="btn-primary-lg w-full mt-6 justify-center">
-            <span id="form-btn-text">Відправити заявку</span>
-            <svg id="form-spinner" class="hidden w-5 h-5 ml-2 animate-spin" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
-            </svg>
-          </button>
-          <div id="form-success" class="hidden mt-4 text-center text-green-400 font-semibold">
-            ✓ Дякуємо! Ми зв'яжемося з вами протягом 1 робочого дня.
+          <div class="flex items-start gap-4">
+            <span class="contact-icon">📞</span>
+            <div>
+              <p class="font-semibold">Телефон</p>
+              <p class="text-brand-500 text-sm">+355 69 123 4567</p>
+            </div>
           </div>
-        </form>
-      </div>
-    </section>
+          <div class="flex items-start gap-4">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <p class="font-semibold">Email</p>
+              <p class="text-brand-500 text-sm">info@kadrisahotel.com</p>
+            </div>
+          </div>
+        </div>
 
-  </main>
+        <div class="map-block rounded-3xl mt-9 h-56"></div>
+      </div>
+
+      <form id="contact-form" class="reveal bg-sand-50 rounded-3xl p-8 space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="form-label-light">Ім'я</label>
+            <input type="text" required class="booking-input" placeholder="Ваше ім'я" />
+          </div>
+          <div>
+            <label class="form-label-light">Email</label>
+            <input type="email" required class="booking-input" placeholder="you@email.com" />
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="form-label-light">Дата заїзду</label>
+            <input type="date" class="booking-input" />
+          </div>
+          <div>
+            <label class="form-label-light">Дата виїзду</label>
+            <input type="date" class="booking-input" />
+          </div>
+        </div>
+        <div>
+          <label class="form-label-light">Повідомлення</label>
+          <textarea rows="4" class="booking-input" placeholder="Розкажіть, що вам потрібно…"></textarea>
+        </div>
+        <button type="submit" class="btn-primary-lg w-full flex items-center justify-center gap-2">
+          <span id="form-btn-text">Надіслати заявку</span>
+          <svg id="form-spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>
+        </button>
+        <p id="form-success" class="hidden text-sm text-brand-600 bg-brand-50 border border-brand-100 rounded-xl px-4 py-3">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+      </form>
+    </div>
+  </section>
 
   <!-- ───────────── FOOTER ───────────── -->
-  <footer class="bg-slate-950 text-slate-400 py-12">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        <div class="lg:col-span-2">
-          <a href="#" class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center">
-              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </div>
-            <span class="text-lg font-extrabold text-white tracking-tight">Mail<span class="text-brand-400">Pulse</span></span>
-          </a>
-          <p class="text-sm leading-relaxed max-w-xs">Email-маркетинг агенція. Перетворюємо підписників на покупців з 2018 року.</p>
-          <div class="flex gap-3 mt-4">
-            <a href="#" class="social-icon" aria-label="Telegram">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 1 0 24 12 12 12 0 0 0 11.944 0Zm5.933 7.913-2.007 9.458c-.149.669-.54.832-1.093.517l-3.015-2.22-1.456 1.4c-.162.16-.298.295-.61.295l.217-3.069 5.586-5.044c.243-.215-.053-.335-.376-.12L7.08 14.61l-2.96-.924c-.644-.2-.656-.644.135-.953l11.55-4.454c.536-.194 1.006.13.832.634Z"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-4 text-sm">Послуги</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#services" class="hover:text-white transition-colors">Email-стратегія</a></li>
-            <li><a href="#services" class="hover:text-white transition-colors">Автоматизація</a></li>
-            <li><a href="#services" class="hover:text-white transition-colors">Дизайн шаблонів</a></li>
-            <li><a href="#services" class="hover:text-white transition-colors">Аналітика</a></li>
-            <li><a href="#services" class="hover:text-white transition-colors">Deliverability</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-semibold mb-4 text-sm">Компанія</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition-colors">Про нас</a></li>
-            <li><a href="#results" class="hover:text-white transition-colors">Кейси</a></li>
-            <li><a href="#pricing" class="hover:text-white transition-colors">Тарифи</a></li>
-            <li><a href="#contact" class="hover:text-white transition-colors">Контакти</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Блог</a></li>
-          </ul>
+  <footer class="bg-brand-900 text-sand-100 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <span class="font-serif text-2xl font-bold text-white">KADRISA</span>
+        <p class="text-xs tracking-[0.35em] text-terracotta-400 mt-1">HOTEL</p>
+        <p class="text-sm text-sand-100/70 mt-4">Бутик-готель на Албанській рив'єрі, де гори зустрічають море.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+          <a href="#" class="social-icon" aria-label="Facebook">FB</a>
+          <a href="#" class="social-icon" aria-label="WhatsApp">WA</a>
         </div>
       </div>
-      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <span>© 2025 MailPulse Agency. Всі права захищені.</span>
-        <div class="flex gap-6">
-          <a href="#" class="hover:text-white transition-colors">Політика конфіденційності</a>
-          <a href="#" class="hover:text-white transition-colors">Умови використання</a>
+
+      <div>
+        <p class="font-semibold text-white mb-4">Навігація</p>
+        <div class="flex flex-col gap-2 text-sm text-sand-100/70">
+          <a href="#about" class="hover:text-white transition-colors">Про готель</a>
+          <a href="#rooms" class="hover:text-white transition-colors">Номери</a>
+          <a href="#amenities" class="hover:text-white transition-colors">Зручності</a>
+          <a href="#gallery" class="hover:text-white transition-colors">Галерея</a>
         </div>
       </div>
+
+      <div>
+        <p class="font-semibold text-white mb-4">Інформація</p>
+        <div class="flex flex-col gap-2 text-sm text-sand-100/70">
+          <a href="#reviews" class="hover:text-white transition-colors">Відгуки</a>
+          <a href="#contact" class="hover:text-white transition-colors">Контакти</a>
+          <a href="#" class="hover:text-white transition-colors">Політика скасування</a>
+          <a href="#" class="hover:text-white transition-colors">Умови проживання</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="font-semibold text-white mb-4">Контакти</p>
+        <div class="flex flex-col gap-2 text-sm text-sand-100/70">
+          <p>Пляж Дхермі, Химара, Албанія</p>
+          <p>+355 69 123 4567</p>
+          <p>info@kadrisahotel.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-12 pt-6 border-t border-white/10 text-xs text-sand-100/50 flex flex-col sm:flex-row justify-between gap-2">
+      <p>© 2026 Kadrisa Hotel. Усі права захищено.</p>
+      <p>Дизайн лендингу підготовлено для реалізації на Weblium</p>
     </div>
   </footer>
 

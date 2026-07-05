@@ -5,10 +5,10 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ── Mobile menu ── */
-const menuBtn   = document.getElementById('menu-btn');
+const menuBtn    = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
-const iconOpen  = document.getElementById('icon-open');
-const iconClose = document.getElementById('icon-close');
+const iconOpen   = document.getElementById('icon-open');
+const iconClose  = document.getElementById('icon-close');
 
 menuBtn.addEventListener('click', () => {
   const isOpen = !mobileMenu.classList.contains('hidden');
@@ -17,7 +17,6 @@ menuBtn.addEventListener('click', () => {
   iconClose.classList.toggle('hidden', isOpen);
 });
 
-// Close on link click
 mobileMenu.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
@@ -51,7 +50,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 /* ── Counter animation ── */
 function animateCount(el) {
   const target = parseInt(el.dataset.count, 10);
-  const duration = 1600;
+  const duration = 1400;
   const step = 16;
   const increment = target / (duration / step);
   let current = 0;
@@ -82,13 +81,11 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
     const icon = btn.querySelector('.faq-icon');
     const isOpen = body.classList.contains('open');
 
-    // Close all
     document.querySelectorAll('.faq-body.open').forEach(b => {
       b.classList.remove('open');
       b.closest('.faq-item').querySelector('.faq-icon').classList.remove('open');
     });
 
-    // Toggle clicked
     if (!isOpen) {
       body.classList.add('open');
       icon.classList.add('open');
@@ -96,29 +93,42 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
   });
 });
 
-/* ── Pricing toggle ── */
-const toggle = document.getElementById('billing-toggle');
-const knob   = document.getElementById('toggle-knob');
-const lblMonthly = document.getElementById('toggle-monthly');
-const lblAnnual  = document.getElementById('toggle-annual');
+/* ── Testimonial slider ── */
+const slidesTrack = document.getElementById('testimonial-slides');
+const slides       = document.querySelectorAll('.testimonial-slide');
+const dotsWrap     = document.getElementById('testimonial-dots');
+const prevBtn      = document.getElementById('t-prev');
+const nextBtn      = document.getElementById('t-next');
+let current = 0;
 
-let isAnnual = false;
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.setAttribute('aria-label', `Відгук ${i + 1}`);
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goTo(i));
+  dotsWrap.appendChild(dot);
+});
 
-toggle.addEventListener('click', () => {
-  isAnnual = !isAnnual;
-  knob.style.transform = isAnnual ? 'translateX(24px)' : 'translateX(0)';
-  toggle.classList.toggle('bg-accent-500', isAnnual);
-  toggle.classList.toggle('bg-brand-500', !isAnnual);
+function goTo(index) {
+  current = (index + slides.length) % slides.length;
+  slidesTrack.style.transform = `translateX(-${current * 100}%)`;
+  dotsWrap.querySelectorAll('button').forEach((d, i) => d.classList.toggle('active', i === current));
+}
 
-  lblMonthly.classList.toggle('text-gray-900', !isAnnual);
-  lblMonthly.classList.toggle('text-gray-500', isAnnual);
-  lblAnnual.classList.toggle('text-gray-900', isAnnual);
-  lblAnnual.classList.toggle('text-gray-500', !isAnnual);
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
 
-  document.querySelectorAll('.price-val').forEach(el => {
-    const val = isAnnual ? el.dataset.annual : el.dataset.monthly;
-    el.textContent = Number(val).toLocaleString('uk-UA');
-  });
+let autoplay = setInterval(() => goTo(current + 1), 6000);
+[prevBtn, nextBtn].forEach(btn => btn.addEventListener('click', () => {
+  clearInterval(autoplay);
+  autoplay = setInterval(() => goTo(current + 1), 6000);
+}));
+
+/* ── Booking widget ── */
+const bookingForm = document.getElementById('booking-form');
+bookingForm.addEventListener('submit', e => {
+  e.preventDefault();
+  document.querySelector('#rooms').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 /* ── Contact form ── */
@@ -129,14 +139,13 @@ const success = document.getElementById('form-success');
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  btnText.textContent = 'Відправляємо…';
+  btnText.textContent = 'Надсилаємо…';
   spinner.classList.remove('hidden');
 
-  // Simulate async submit
-  await new Promise(r => setTimeout(r, 1500));
+  await new Promise(r => setTimeout(r, 1200));
 
   spinner.classList.add('hidden');
-  btnText.textContent = 'Відправити заявку';
+  btnText.textContent = 'Надіслати заявку';
   success.classList.remove('hidden');
   form.reset();
 
