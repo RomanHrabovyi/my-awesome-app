@@ -19,46 +19,15 @@ h1, h2, h3, .font-serif { font-family: 'Playfair Display', Georgia, serif; }
 
 /* ── Hero ── */
 .hero-bg {
-  background: linear-gradient(135deg, #0d3436 0%, #16514f 35%, #2d7a74 65%, #4a9a95 100%);
-  background-size: 200% 200%;
+  background-color: #16514f;
+  background-size: cover;
+  background-position: center;
   position: relative;
-}
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 15% 25%, rgba(255,255,255,0.08) 0%, transparent 45%),
-    radial-gradient(circle at 85% 15%, rgba(212,175,122,0.18) 0%, transparent 40%),
-    radial-gradient(circle at 50% 90%, rgba(0,0,0,0.25) 0%, transparent 55%);
 }
 .hero-overlay {
-  background: linear-gradient(to top, rgba(10,30,30,0.65) 0%, rgba(10,30,30,0.15) 55%, rgba(10,30,30,0.35) 100%);
+  background: linear-gradient(to top, rgba(10,30,30,0.85) 0%, rgba(10,30,30,0.45) 55%, rgba(10,30,30,0.55) 100%);
 }
 
-/* ── Photo placeholders (swap for real photos in Weblium) ── */
-.photo-block, .photo-block-alt, .photo-tall {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #7fbdb9 0%, #2d7a74 100%);
-}
-.photo-block-alt {
-  background: linear-gradient(135deg, #e4cda0 0%, #c25f30 100%);
-}
-.photo-tall { min-height: 100%; }
-.photo-block::after, .photo-block-alt::after, .photo-tall::after {
-  content: '\1F4F7  Фото готелю';
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.55);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  text-align: center;
-  padding: 0 1rem;
-}
 .gallery-item { transition: transform .4s ease, filter .4s ease; }
 .gallery-item:hover { transform: scale(1.02); filter: brightness(1.08); }
 

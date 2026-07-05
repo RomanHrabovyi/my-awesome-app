@@ -74,7 +74,7 @@
   </header>
 
   <!-- ───────────── HERO ───────────── -->
-  <section class="relative hero-bg min-h-[92vh] flex items-end">
+  <section class="relative hero-bg min-h-[92vh] flex items-end" style="background-image:url('assets/images/exterior-building.jpg')">
     <div class="absolute inset-0 hero-overlay"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 pb-28 pt-40 w-full text-white">
@@ -83,7 +83,7 @@
         Your seaside stay on Albania's Adriatic coast
       </h1>
       <p class="text-lg sm:text-xl text-sand-100/90 mt-6 max-w-xl animate-fade-up" style="animation-delay:.15s">
-        Kadrisa Hotel is a welcoming, modern hotel close to the beach, with a sea-view terrace and warm Mediterranean hospitality.
+        Kadrisa Hotel is a welcoming, modern hotel just 250 m from the beach, with warm Mediterranean hospitality.
       </p>
       <div class="flex flex-wrap gap-4 mt-9 animate-fade-up" style="animation-delay:.3s">
         <a href="#booking" class="btn-primary-lg">Book a Room</a>
@@ -124,20 +124,20 @@
   <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-6">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
       <div class="reveal">
-        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700"><span data-count="24">0</span>+</p>
-        <p class="text-sm text-brand-500 mt-2 tracking-wide">Cozy rooms</p>
-      </div>
-      <div class="reveal" style="transition-delay:.05s">
-        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700"><span data-count="50">0</span> m</p>
+        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700"><span data-count="250">0</span> m</p>
         <p class="text-sm text-brand-500 mt-2 tracking-wide">To the beach</p>
       </div>
+      <div class="reveal" style="transition-delay:.05s">
+        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700"><span data-count="4">0</span> min</p>
+        <p class="text-sm text-brand-500 mt-2 tracking-wide">Walk to the shore</p>
+      </div>
       <div class="reveal" style="transition-delay:.1s">
-        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700">4.8</p>
-        <p class="text-sm text-brand-500 mt-2 tracking-wide">Guest rating</p>
+        <p class="font-serif text-2xl lg:text-3xl font-bold text-brand-700">Restaurant<br />& Bar</p>
+        <p class="text-sm text-brand-500 mt-2 tracking-wide">On-site dining</p>
       </div>
       <div class="reveal" style="transition-delay:.15s">
-        <p class="font-serif text-4xl lg:text-5xl font-bold text-brand-700">100%</p>
-        <p class="text-sm text-brand-500 mt-2 tracking-wide">Breakfast included</p>
+        <p class="font-serif text-2xl lg:text-3xl font-bold text-brand-700">Free<br />Wi-Fi</p>
+        <p class="text-sm text-brand-500 mt-2 tracking-wide">Throughout the hotel</p>
       </div>
     </div>
   </section>
@@ -145,10 +145,10 @@
   <!-- ───────────── ABOUT ───────────── -->
   <section id="about" class="max-w-7xl mx-auto px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-14 items-center">
     <div class="reveal grid grid-cols-2 gap-4">
-      <div class="photo-block photo-tall rounded-3xl"></div>
+      <img src="assets/images/lobby-reception.jpg" alt="Kadrisa Hotel reception and lobby" class="rounded-3xl w-full h-full object-cover" />
       <div class="flex flex-col gap-4">
-        <div class="photo-block rounded-3xl h-40 lg:h-48"></div>
-        <div class="photo-block-alt rounded-3xl h-40 lg:h-48"></div>
+        <img src="assets/images/lounge-sofas.jpg" alt="Hotel lounge seating area" class="rounded-3xl h-40 lg:h-48 w-full object-cover" />
+        <img src="assets/images/rooftop-sea-view.jpg" alt="View of Durrës and the Adriatic Sea from the hotel" class="rounded-3xl h-40 lg:h-48 w-full object-cover" />
       </div>
     </div>
 
@@ -161,19 +161,19 @@
       <ul class="mt-8 space-y-4">
         <li class="flex items-start gap-3">
           <span class="check-icon">✓</span>
-          <span>Private beach access, just a 2-minute walk</span>
+          <span>Just 250 m from the beach</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="check-icon">✓</span>
-          <span>Terrace and restaurant with panoramic sea views</span>
+          <span>On-site restaurant and bar serving Mediterranean dishes</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="check-icon">✓</span>
-          <span>Home-style cooking with local produce and our own olive oil</span>
+          <span>Cozy lounge and garden terrace to unwind</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="check-icon">✓</span>
-          <span>Intimate atmosphere — only 24 rooms, personal service</span>
+          <span>Double, twin, and family rooms to fit any group</span>
         </li>
       </ul>
       <a href="#rooms" class="btn-outline mt-9">View Rooms →</a>
@@ -186,58 +186,54 @@
       <div class="text-center max-w-2xl mx-auto reveal">
         <span class="chip">Rooms & Suites</span>
         <h2 class="section-title mt-5">Find your perfect room</h2>
-        <p class="section-sub mt-4 mx-auto">From cozy Standard rooms to spacious sea-view suites — every room is designed for rest.</p>
+        <p class="section-sub mt-4 mx-auto">From cozy doubles to family apartments — every room is designed for a comfortable stay.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-16">
         <div class="room-card reveal">
-          <div class="photo-block h-52 rounded-t-2xl"></div>
+          <img src="assets/images/room-double.jpg" alt="Double Room at Kadrisa Hotel" class="h-52 w-full object-cover rounded-t-2xl" />
           <div class="p-6">
-            <h3 class="font-serif text-xl font-semibold">Standard Sea View</h3>
-            <p class="text-sm text-brand-500 mt-1">22 m² · up to 2 guests</p>
-            <p class="text-sm text-brand-600/80 mt-3">A classic room with a balcony and sea view.</p>
-            <div class="flex items-center justify-between mt-5">
-              <span class="font-serif text-lg font-bold text-terracotta-600">from €80<span class="text-xs font-sans font-normal text-brand-400">/night</span></span>
-              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Book →</a>
+            <h3 class="font-serif text-xl font-semibold">Double Room</h3>
+            <p class="text-sm text-brand-500 mt-1">Up to 2 guests</p>
+            <p class="text-sm text-brand-600/80 mt-3">A comfortable room with a double bed, AC, and TV.</p>
+            <div class="flex items-center justify-end mt-5">
+              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Check availability →</a>
             </div>
           </div>
         </div>
 
         <div class="room-card reveal" style="transition-delay:.05s">
-          <div class="photo-block-alt h-52 rounded-t-2xl"></div>
+          <img src="assets/images/room-twin.jpg" alt="Twin Room at Kadrisa Hotel" class="h-52 w-full object-cover rounded-t-2xl" />
           <div class="p-6">
-            <h3 class="font-serif text-xl font-semibold">Deluxe Balcony</h3>
-            <p class="text-sm text-brand-500 mt-1">28 m² · up to 3 guests</p>
-            <p class="text-sm text-brand-600/80 mt-3">A spacious room with a large balcony over the sea.</p>
-            <div class="flex items-center justify-between mt-5">
-              <span class="font-serif text-lg font-bold text-terracotta-600">from €105<span class="text-xs font-sans font-normal text-brand-400">/night</span></span>
-              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Book →</a>
+            <h3 class="font-serif text-xl font-semibold">Twin Room</h3>
+            <p class="text-sm text-brand-500 mt-1">Up to 2 guests</p>
+            <p class="text-sm text-brand-600/80 mt-3">Two single beds, ideal for friends or colleagues.</p>
+            <div class="flex items-center justify-end mt-5">
+              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Check availability →</a>
             </div>
           </div>
         </div>
 
         <div class="room-card reveal" style="transition-delay:.1s">
-          <div class="photo-block h-52 rounded-t-2xl"></div>
+          <img src="assets/images/room-superior-balcony.jpg" alt="Superior Room with balcony at Kadrisa Hotel" class="h-52 w-full object-cover rounded-t-2xl" />
           <div class="p-6">
-            <h3 class="font-serif text-xl font-semibold">Family Suite</h3>
-            <p class="text-sm text-brand-500 mt-1">40 m² · up to 4 guests</p>
-            <p class="text-sm text-brand-600/80 mt-3">A two-room suite, perfect for families.</p>
-            <div class="flex items-center justify-between mt-5">
-              <span class="font-serif text-lg font-bold text-terracotta-600">from €150<span class="text-xs font-sans font-normal text-brand-400">/night</span></span>
-              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Book →</a>
+            <h3 class="font-serif text-xl font-semibold">Superior Room</h3>
+            <p class="text-sm text-brand-500 mt-1">Up to 3 guests</p>
+            <p class="text-sm text-brand-600/80 mt-3">A larger room with a balcony and a sofa.</p>
+            <div class="flex items-center justify-end mt-5">
+              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Check availability →</a>
             </div>
           </div>
         </div>
 
         <div class="room-card reveal" style="transition-delay:.15s">
-          <div class="photo-block-alt h-52 rounded-t-2xl"></div>
+          <img src="assets/images/room-family-suite.jpg" alt="Family Apartment at Kadrisa Hotel" class="h-52 w-full object-cover rounded-t-2xl" />
           <div class="p-6">
-            <h3 class="font-serif text-xl font-semibold">Honeymoon Suite</h3>
-            <p class="text-sm text-brand-500 mt-1">35 m² · up to 2 guests</p>
-            <p class="text-sm text-brand-600/80 mt-3">A private terrace with a jacuzzi and sunset views.</p>
-            <div class="flex items-center justify-between mt-5">
-              <span class="font-serif text-lg font-bold text-terracotta-600">from €180<span class="text-xs font-sans font-normal text-brand-400">/night</span></span>
-              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Book →</a>
+            <h3 class="font-serif text-xl font-semibold">Family Apartment</h3>
+            <p class="text-sm text-brand-500 mt-1">Up to 5 guests</p>
+            <p class="text-sm text-brand-600/80 mt-3">Two bedrooms plus a living area with a sofa and kitchenette.</p>
+            <div class="flex items-center justify-end mt-5">
+              <a href="#contact" class="text-sm font-semibold text-brand-700 hover:text-terracotta-500">Check availability →</a>
             </div>
           </div>
         </div>
@@ -255,8 +251,8 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
       <div class="amenity-card reveal">
         <div class="amenity-icon">🏖️</div>
-        <h3 class="font-semibold mt-4">Private Beach</h3>
-        <p class="text-sm text-brand-500 mt-1">Direct access to the shore</p>
+        <h3 class="font-semibold mt-4">Near the Beach</h3>
+        <p class="text-sm text-brand-500 mt-1">Just 250 m from the shore</p>
       </div>
       <div class="amenity-card reveal" style="transition-delay:.04s">
         <div class="amenity-icon">🍽️</div>
@@ -264,9 +260,9 @@
         <p class="text-sm text-brand-500 mt-1">Mediterranean cuisine</p>
       </div>
       <div class="amenity-card reveal" style="transition-delay:.08s">
-        <div class="amenity-icon">💆</div>
-        <h3 class="font-semibold mt-4">Spa & Massage</h3>
-        <p class="text-sm text-brand-500 mt-1">Treatments to unwind</p>
+        <div class="amenity-icon">❄️</div>
+        <h3 class="font-semibold mt-4">Air Conditioning</h3>
+        <p class="text-sm text-brand-500 mt-1">In every room</p>
       </div>
       <div class="amenity-card reveal" style="transition-delay:.12s">
         <div class="amenity-icon">📶</div>
@@ -274,14 +270,14 @@
         <p class="text-sm text-brand-500 mt-1">In all rooms and common areas</p>
       </div>
       <div class="amenity-card reveal">
-        <div class="amenity-icon">🚗</div>
-        <h3 class="font-semibold mt-4">Airport Transfer</h3>
-        <p class="text-sm text-brand-500 mt-1">To/from the airport on request</p>
+        <div class="amenity-icon">📺</div>
+        <h3 class="font-semibold mt-4">Flat-screen TV</h3>
+        <p class="text-sm text-brand-500 mt-1">In every room</p>
       </div>
       <div class="amenity-card reveal" style="transition-delay:.04s">
         <div class="amenity-icon">🅿️</div>
         <h3 class="font-semibold mt-4">Parking</h3>
-        <p class="text-sm text-brand-500 mt-1">Free and secure</p>
+        <p class="text-sm text-brand-500 mt-1">Available nearby</p>
       </div>
       <div class="amenity-card reveal" style="transition-delay:.08s">
         <div class="amenity-icon">🕐</div>
@@ -289,9 +285,9 @@
         <p class="text-sm text-brand-500 mt-1">Always available for guests</p>
       </div>
       <div class="amenity-card reveal" style="transition-delay:.12s">
-        <div class="amenity-icon">🐾</div>
-        <h3 class="font-semibold mt-4">Pet Friendly</h3>
-        <p class="text-sm text-brand-500 mt-1">By prior arrangement</p>
+        <div class="amenity-icon">👨‍👩‍👧</div>
+        <h3 class="font-semibold mt-4">Family Rooms</h3>
+        <p class="text-sm text-brand-500 mt-1">Apartments for groups</p>
       </div>
     </div>
   </section>
@@ -304,12 +300,33 @@
         <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white mt-5">The Kadrisa Hotel Experience</h2>
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14">
-        <div class="gallery-item photo-block rounded-2xl h-52 lg:h-64 lg:col-span-2 lg:row-span-2 lg:h-full reveal"></div>
-        <div class="gallery-item photo-block-alt rounded-2xl h-52 lg:h-64 reveal" style="transition-delay:.05s"></div>
-        <div class="gallery-item photo-block rounded-2xl h-52 lg:h-64 reveal" style="transition-delay:.1s"></div>
-        <div class="gallery-item photo-block-alt rounded-2xl h-52 lg:h-64 reveal" style="transition-delay:.15s"></div>
-        <div class="gallery-item photo-block rounded-2xl h-52 lg:h-64 reveal" style="transition-delay:.2s"></div>
+      <h3 class="text-sand-100 font-semibold uppercase tracking-wider text-sm mt-14 mb-4 reveal">Restaurant & Bar</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <img src="assets/images/restaurant-sign.jpg" alt="Kadrisa Hotel restaurant" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" />
+        <img src="assets/images/restaurant-dining.jpg" alt="Restaurant dining area" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.05s" />
+        <img src="assets/images/bar.jpg" alt="Hotel bar" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.1s" />
+        <img src="assets/images/bar-ambient.jpg" alt="Bar and lounge in the evening" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.15s" />
+      </div>
+
+      <h3 class="text-sand-100 font-semibold uppercase tracking-wider text-sm mt-12 mb-4 reveal">Rooms & Suites</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <img src="assets/images/room-double-2.jpg" alt="Double room" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" />
+        <img src="assets/images/room-double-3.jpg" alt="Double room" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.05s" />
+        <img src="assets/images/room-double-4.jpg" alt="Double room" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.1s" />
+        <img src="assets/images/room-double-5.jpg" alt="Double room" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.15s" />
+        <img src="assets/images/room-double-6.jpg" alt="Double room" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" />
+        <img src="assets/images/room-double-7.jpg" alt="Double room" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.05s" />
+        <img src="assets/images/suite-hallway.jpg" alt="Family apartment hallway" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.1s" />
+        <img src="assets/images/suite-living-area.jpg" alt="Family apartment living area" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.15s" />
+      </div>
+
+      <h3 class="text-sand-100 font-semibold uppercase tracking-wider text-sm mt-12 mb-4 reveal">Hotel & Comfort</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <img src="assets/images/bathroom-1.jpg" alt="Hotel bathroom" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" />
+        <img src="assets/images/bathroom-2.jpg" alt="Hotel bathroom" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.05s" />
+        <img src="assets/images/bathroom-3.jpg" alt="Hotel bathroom" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.1s" />
+        <img src="assets/images/corridor.jpg" alt="Hotel corridor" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" style="transition-delay:.15s" />
+        <img src="assets/images/lounge-alt.jpg" alt="Hotel lounge" class="gallery-item rounded-2xl h-52 w-full object-cover reveal" />
       </div>
     </div>
   </section>
@@ -384,24 +401,24 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-btn">
-          <span>Is airport transfer available?</span>
+          <span>How far is the hotel from Tirana Airport?</span>
           <svg class="faq-icon w-5 h-5 flex-shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </button>
-        <div class="faq-body"><p class="text-brand-600/80">Yes, we arrange transfers from Tirana and Corfu (by ferry) airports on request.</p></div>
+        <div class="faq-body"><p class="text-brand-600/80">Tirana International Airport is about 30–40 minutes away by car. Contact us for transfer options.</p></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-btn">
           <span>What is the cancellation policy?</span>
           <svg class="faq-icon w-5 h-5 flex-shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </button>
-        <div class="faq-body"><p class="text-brand-600/80">Free cancellation up to 7 days before check-in. After that, the cost of the first night is charged.</p></div>
+        <div class="faq-body"><p class="text-brand-600/80">Cancellation terms depend on the rate booked. Please check the conditions shown at booking or contact us directly.</p></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-btn">
-          <span>Are pets allowed?</span>
+          <span>Is parking available?</span>
           <svg class="faq-icon w-5 h-5 flex-shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </button>
-        <div class="faq-body"><p class="text-brand-600/80">Yes, small pets are welcome by prior arrangement with the front desk.</p></div>
+        <div class="faq-body"><p class="text-brand-600/80">Yes, parking is available near the hotel. Contact us ahead of your stay for details.</p></div>
       </div>
     </div>
   </section>
@@ -419,7 +436,7 @@
             <span class="contact-icon">📍</span>
             <div>
               <p class="font-semibold">Address</p>
-              <p class="text-brand-500 text-sm">Currila, Durrës, Albania</p>
+              <p class="text-brand-500 text-sm">Rruga Pavaresia, Durrës, Albania</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -512,7 +529,7 @@
       <div>
         <p class="font-semibold text-white mb-4">Contact</p>
         <div class="flex flex-col gap-2 text-sm text-sand-100/70">
-          <p>Currila, Durrës, Albania</p>
+          <p>Rruga Pavaresia, Durrës, Albania</p>
           <p>+355 69 123 4567</p>
           <p>info@kadrisahotel.com</p>
         </div>
